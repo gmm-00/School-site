@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+
+<div class="gallery">
+    <div class="logo1" onclick="scrollToContent()">
+        <img src="/static/image/down1.png" alt="Scroll Down">
+    </div>
+    <div class="gall mt-5 mx-12"><img src="/static/image/gallery.jpg" alt="Contact Image"></div>
+
+    <h1 class="text-gray-300 text-3xl"> Gallery </h1>
+    <p>To develop humanity, brother-hood and cultural harmony among the learners for national integrity and global fraternity. </p>
+</div>
+
+<div id="content" class="content flex mt-12">
+
+
+<div class="img-gallery mt-20 mx-28  px-2  ">
+  <div class="img bg-gray-200 rounded-lg shadow-xl px-10 py-10 -mt-6"><img src="/static/image/1.jpeg"></div>
+  <div class="img img bg-gray-200 rounded-lg shadow-xl px-10 py-10 -mt-6"><img src="/static/image/2.png"></div>
+  <div class="img img bg-gray-200 rounded-lg shadow-xl px-10 py-10 -mt-6"><img src="/static/image/3.jpg"></div>
+  <div class="img img bg-gray-200 rounded-lg shadow-xl px-10 py-10 -mt-6 mt-2"><img src="/static/image/4.jpg"></div>
+  <div class="img img bg-gray-200 rounded-lg shadow-xl px-10 py-10 -mt-6 mt-2"><img src="/static/image/5.jpeg"></div>
+  <div class="img img bg-gray-200 rounded-lg shadow-xl px-10 py-10 -mt-6 mt-2"><img src="/static/image/6.jpg"></div>
+</div></div>
+
+<script>
+    function scrollToContent() {
+        // Get the Y position of the content element
+        const contentElement = document.getElementById('content');
+        const contentPosition = contentElement.getBoundingClientRect().top;
+
+        // Perform smooth scrolling to the content element
+        window.scrollBy({ top: contentPosition, behavior: 'smooth' });
+    }
+</script>
+
+
+
+{% endblock %}

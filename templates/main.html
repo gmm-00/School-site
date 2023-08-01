@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+ 
+
+
+
+<div class="container mt-5 ">
+<form method="post" class="col-6 mx-auto card px-3 shadow-lg" enctype="multipart/form-data">
+
+	{% csrf_token %}
+
+  <h2 class="py-2"> Add Notice</h2>
+  <hr>
+  <div class="mb-3">
+    <label  class="form-label">BY</label>
+    <input type="text" class="form-control" name="notice_by" required>
+    
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Notice Title</label>
+    <input type="text" class="form-control" name="notice_title" required>
+  </div>
+  <div class="mb-3">
+   <label for="exampleFormControlTextarea1" class="form-label" >Notice Description</label>
+  <textarea name="notice_description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+  </div>
+    <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Notice Image</label>
+    <input type="file" class="form-control" name="notice_image">
+  </div>
+  <div class="mb-3">
+  <button type="submit" value="submit" class="btn btn-primary">Add Notice</button></div>
+</form></div>
+	
+{% if notices %}
+<table class=" mt-5 table table-striped table-hover table-bordered " enctype="multipart/form-data">
+  <thead>
+    <tr>
+      <th scope="col">S.N</th>
+      <th scope="col">BY</th>
+      <th scope="col">Notice Title</th>
+      <th scope="col">Notice Description</th>
+      <th scope="col">Notice Image</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody class=" table-group-divider t">
+    {% for notice in notices %}
+    <tr>
+      <th>{{forloop.counter}}</th>
+      <th>{{notice.notice_by}}</th>
+      <td>{{notice.notice_title}}</td>
+      <td>{{notice.notice_description}}</td>
+      <td>
+        <img src="/media/{{ notice.notice_image }}" style="height:100px">
+
+      <td><a href="/delete_notice/{{notice.id}}/"class="btn btn-danger">Delete</a>
+      <td><a href="/update_notice/{{notice.id}}/"class="btn btn-success">Update</a>
+    </tr>
+    {% endfor%} 
+    {%endif%} 
+  </tbody>
+
+</table>
+
+
+
+
+{% endblock %}
+

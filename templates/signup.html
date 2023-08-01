@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet"  href="/static/css/style3.css">
+</head>
+<body>
+	<div class="box">
+	<spam class="borderline"></spam>
+		<form method="post" enctype="multipart/form-data">
+			{%  csrf_token %}
+			
+
+			<h2>Sign up</h2>
+			<hr>
+		{% if messages%}
+  		<div class="alert alert-primary" role="alert">
+
+    	{% for message in messages %}
+    	{{ message }}
+    	{% endfor %}</div>
+    	{% endif %}
+			<div class="inputbox">
+				<input type="email" name="email" required>
+				<span>Email</span>
+				<i></i>
+			</div>
+			<div class="inputbox">
+				<input type="text" name="username" required>
+				<span>Username</span>
+				<i></i>
+			</div>
+			<div class="inputbox">
+				<input type="password" name="password" required>
+				<span>Password</span>
+				<i></i>
+			</div>
+			<div class="links">
+				<a href="/login/">Login</a>
+			</div>
+			<input type="submit" value="Sign up">
+		</form>
+	</div>
+
+			
+
+</body>
+</html>
