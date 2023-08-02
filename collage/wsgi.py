@@ -15,5 +15,3 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'collage.settings')
 
 application = get_wsgi_application()
 
-
-app = application
