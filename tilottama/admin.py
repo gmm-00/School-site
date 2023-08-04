@@ -7,3 +7,16 @@ class MemberAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Notices, MemberAdmin) 
+admin.site.register(Department, MemberAdmin) 
+admin.site.register(StudentID, MemberAdmin) 
+admin.site.register(Student, MemberAdmin) 
+admin.site.register(Subject, MemberAdmin)
+
+class marks(admin.ModelAdmin):
+
+
+	list_display = ['student' , 'subject' , 'marks']
+
+admin.site.register(StudentsMarks, marks) 
+
+

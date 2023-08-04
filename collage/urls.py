@@ -34,6 +34,7 @@ urlpatterns = [
     path('delete_notice/<id>/',views.delete_notice, name='delete_notice'),
     path('user-notice/' , views.user_notice , name='user-notice'),
     path('logout/' , views.logout_page , name='logout'),
+    path('student/' , views.get_student , name='student'),
 
 ]
 
