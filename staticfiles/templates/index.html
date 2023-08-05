@@ -1,0 +1,64 @@
+{% extends 'base.html'%}
+{% block content %}
+
+	 <div class="carousel-wrapper">
+<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active c-item" data-bs-interval="5000"> <!-- Set interval time in milliseconds (e.g., 5000 ms = 5 seconds) -->
+      <img src="/static/image/1.JPG" class="d-block w-100 c-img " alt="...">
+      <div class="carousel-caption d-none d-md-block  mt-4">
+      	<h1 class="display-1 text-4xl text-capitalize font-semibold text-white-50 mb-3">Embrace the Boundless Journey of Learning!</h1>
+      	<p class=" fs-6 text-white">Welcome to <b>Tilottama College</b>, an esteemed institution nestled in the heart of our beautiful nation, where education knows no limits and possibilities are endless.Tilottama College stands proudly as an award-winning college, dedicated to nurturing young minds and shaping future leaders.</p>
+      	<div class="btn btn-primary mt-2">About Us</div>
+        
+      </div>
+    </div>
+    <div class="carousel-item c-item" data-bs-interval="5000">
+      <img src="static/image/2.svg" class="d-block w-100 c-img" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1 class="fs-3 text-white-50 font-semibold text-capitalize">A World of Opportunities:</h1>
+        <p class="fs-6 text-white mt-2">We believe in unlocking the potential of every student, empowering them to explore a world of opportunities. Our dedicated faculty and staff are committed to delivering exceptional education, focusing on holistic development, and encouraging critical thinking and problem-solving skills.</p>
+      </div>
+    </div>
+    <div class="carousel-item c-item" data-bs-interval="5000">
+      <img src="static/image/1.JPG" class="d-block w-100 c-img" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1 class="fs-3 text-white-50 text-capitalize font-semibold">Join Tilottama College - A Gateway to a Bright Future:</h1>
+        <p class="fs-6 text-white mt-2">As you step into Tilottama College, you are embarking on a transformative journey, preparing yourself for a successful and fulfilling life. Join us in shaping a brighter future for yourself and the world around you.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- JavaScript for carousel auto-sliding -->
+<script>
+  // Initialize the carousel
+  var myCarousel = document.getElementById('carouselExampleDark');
+  var carousel = new bootstrap.Carousel(myCarousel);
+
+  // Start the auto-slide after the page has loaded
+  window.addEventListener('load', function() {
+    carousel.cycle(); // Start auto-sliding
+  });
+</script>
+
+		
+
+	</div>
+</body>
+</html> 
+
+{% endblock %}

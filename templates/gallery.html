@@ -1,31 +1,64 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
-
-
 
 <div class="gallery">
     <div class="logo1" onclick="scrollToContent()">
         <img src="/static/image/down1.png" alt="Scroll Down">
     </div>
-    <div class="gall mt-5 mx-12"><img src="/static/image/gallery.jpg" alt="Contact Image"></div>
+    <div class="gall mt-5 mx-12">
+        <img src="/static/image/gallery.jpg" alt="Contact Image">
+    </div>
 
     <h1 class="text-gray-300 text-3xl"> Gallery </h1>
-    <p>To develop humanity, brother-hood and cultural harmony among the learners for national integrity and global fraternity. </p>
+    <p>To develop humanity, brother-hood and cultural harmony among the learners for national integrity and global fraternity.</p>
 </div>
 
-<div id="content" class="content flex mt-12">
+<div class="mt-4 text-center bg-gray-100 rounded-lg shadow-md py-4 px-6 border border-gray-300">
+    <h4 class="text-3xl font-semibold text-blue-600">Gallery</h4>
+</div>
+<div class="img-gallery mt-20 mx-4 sm:mx-8 md:mx-12 lg:mx-16 xl:mx-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="/static/image/a.jpg" alt="BBA" class="w-full h-64 object-cover">
+        <div class="p-4">
+            <p class="text-xl font-semibold mb-2">BBA Convocation</p>
+            <p class="text-gray-600">Description for BBA image goes here.</p>
+        </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="/static/image/b.jpg" alt="Collage Infrastructure" class="w-full h-64 object-cover">
+        <div class="p-4">
+            <p class="text-xl font-semibold mb-2">Collage Infrastructure</p>
+            <p class="text-gray-600">Description for Collage Infrastructure image goes here.</p>
+        </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="/static/image/c.jpeg" alt="Collage Lab" class="w-full h-64 object-cover">
+        <div class="p-4">
+            <p class="text-xl font-semibold mb-2">Collage Lab</p>
+            <p class="text-gray-600">Description for Collage Lab image goes here.</p>
+        </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="/static/image/d.jpeg" alt="Collage Lab" class="w-full h-64 object-cover">
+        <div class="p-4">
+            <p class="text-xl font-semibold mb-2">Collage Lab</p>
+            <p class="text-gray-600">Description for Collage Lab image goes here.</p>
+        </div>
+    </div>
+    
+</div>
 
+    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <img src="/static/image/a.jpg" alt="BBA" class="w-full h-64 object-cover">
+        <div class="p-4">
+            <p class="text-xl font-semibold mb-2">BBA Convocation</p>
+            <p class="text-gray-600">Description for BBA image goes here.</p>
+        </div>
+    </div>
+</div>
 
-<div class="img-gallery mt-20 mx-28  px-2  ">
-  <div class="img bg-gray-200 rounded-lg shadow-xl px-10 py-10 -mt-6"><img src="/static/image/1.jpeg"></div>
-  <div class="img img bg-gray-200 rounded-lg shadow-xl px-10 py-10 -mt-6"><img src="/static/image/2.png"></div>
-  <div class="img img bg-gray-200 rounded-lg shadow-xl px-10 py-10 -mt-6"><img src="/static/image/3.jpg"></div>
-  <div class="img img bg-gray-200 rounded-lg shadow-xl px-10 py-10 -mt-6 mt-2"><img src="/static/image/4.jpg"></div>
-  <div class="img img bg-gray-200 rounded-lg shadow-xl px-10 py-10 -mt-6 mt-2"><img src="/static/image/5.jpeg"></div>
-  <div class="img img bg-gray-200 rounded-lg shadow-xl px-10 py-10 -mt-6 mt-2"><img src="/static/image/6.jpg"></div>
-</div></div>
+</div>
 
 <script>
     function scrollToContent() {
@@ -37,7 +70,5 @@
         window.scrollBy({ top: contentPosition, behavior: 'smooth' });
     }
 </script>
-
-
 
 {% endblock %}

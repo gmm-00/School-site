@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content%}
+ <nav class="navbar bg-light">
+  <div class="container-fluid d-flex">
+    <a href="#" class="text-primary">BY {{update.notice_by}}</a>
+    </div>
+</nav>
+
+
+</nav>
+<div class="container mt-5 ">
+<form method="post" class="col-6 mx-auto card px-3 shadow-lg" enctype="multipart/form-data">
+  {% csrf_token %}
+  <h2 class="py-2"> Update Notice</h2>
+  <hr>
+  <div class="mb-3">
+    <label  class="form-label">BY</label>
+    <input type="text" class="form-control" name="notice_by" value="{{update.notice_by}}" required>
+    
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Notice Title</label>
+    <input type="text" class="form-control" name="notice_title"  value="{{update.notice_title}}"required>
+  </div>
+  <div class="mb-3">
+   <label for="exampleFormControlTextarea1" class="form-label" >Notice Description</label>
+  <textarea name="notice_description" class="form-control" id="exampleFormControlTextarea1" rows="3">{{update.notice_description}}</textarea>
+
+  </div>
+    <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Notice Image</label>
+    <input type="file" class="form-control" name="notice_image">
+  </div>
+  <div class="mb-3">
+  <button type="submit" value="submit" class="btn btn-primary">Update Notice</button></div>
+</form></div>
+</div>
+
+
+{% endblock %}

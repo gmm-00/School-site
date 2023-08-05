@@ -6,7 +6,11 @@ from django.contrib.auth import authenticate, login , logout
 from django.contrib import messages
 from .models import *
 from django.core.paginator import Paginator
-from django.db.models import Q
+from .client import report
+from django.db.models import *
+from django.core.mail import EmailMultiAlternatives
+from django.contrib.auth.decorators import login_required
+
 def home(request):
     return render(request, 'index.html')
 
@@ -46,36 +50,60 @@ def signup_page(request):
     return render(request , 'signup.html')
 
 def login_page(request):
-   
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
 
-        user = authenticate(username=username, password=password)
-
-        if user is None:
-            messages.error(request, "Invalid username or password")
-            return redirect("/login/")
+        # Check for specific username and password
+        if username == 'shankar11' and password == '1122':
+            return redirect('/notice/')
         else:
-            # Check for specific username and password
-            if username == 'shankar11' and password == '1122':
-                return redirect('/notice/')
+            user = authenticate(username=username, password=password)
+
+            if user is None:
+                messages.error(request, "Invalid username or password")
+                return redirect("/login/")
             else:
                 login(request, user)  # Assuming you want to log in the user here.
                 return redirect('/user-notice/')
-    return render(request , 'login.html')
+    return render(request, 'login.html')
+
 
 def contact(request):
+    email=''
+
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+
+        contact_details.objects.create(
+            name = name,
+            email = email,
+            subject = subject,
+            message = message
+            )
+
+        subject , from_email, to = "Welcome Email", "p1ashok36@gmail.com", email
+        text_content = "This is an important message."
+        html_content = "<b>Thanks u! for Reaching us and <strong>Welcome to Tilottama Collage</strong>.</b>"
+        
+        msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+        msg.attach_alternative(html_content, "text/html")
+        msg.send()
+
+
+    
     return render(request, 'contact.html')
 
-
+@login_required(login_url="/login/")
 def footer(request):
     return render(request, 'footer.html')
 
 
 def gallery(request):
     return render(request, 'gallery.html')
-
 
 def notice(request):
 
@@ -186,3 +214,10 @@ def get_student(request):
 
     return render(request , 'student.html' , context)
 
+
+def see_marks(request, student_id):
+    
+    mark = StudentsMarks.objects.filter(student__student_id__student_id=student_id)
+    total_marks = mark.aggregate(total=Sum('marks'))
+    context = {'marks': mark, 'total': total_marks}
+    return render(request, 'see_marks.html', context)

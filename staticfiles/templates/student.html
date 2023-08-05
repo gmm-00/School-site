@@ -1,0 +1,74 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+
+
+
+<div class="search mt-3 mx-40">
+	<form>
+	<div class="col-md-6">
+		<input class="form-control" name="search" placeholder="Search">
+	</div>
+	<div class="col-md-6">
+		<button class="btn btn-primary mt-2 ">Search</button>
+	</div>
+</form>
+</div>
+
+<div class="conatiner mt-5">
+	<table class=" table table-striped  ">
+	
+  	<thead>
+
+  	
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">StudentID</th>
+      <th scope="col">Department</th>
+      <th scope="col">StudentName</th>
+      <th scope="col">Email</th>
+      <th scope="col">Age</th>
+    </tr>
+	</thead>
+	</tbody>
+	{% for student in students%}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{student.student_id}}</td>
+      <td>{{student.department.department}}</td>
+      <td>{{student.student_name}}</td>
+      <td>{{student.student_email}}</td>
+      <td>{{student.student_age}}</td>
+    
+
+	</tr>
+
+
+	{% endfor %}
+	</table>
+
+	</div>
+
+</div>
+	<nav aria-label="Page navigation example">
+  <ul class="pagination mb-10">
+    
+        {% if students.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page=1">&laquo;first</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ students.previous_page_number }}">previous</a></li>
+        {% endif %}
+
+        <span class="current mt-2">
+            Page {{ students.number }} of {{ students.paginator.num_pages }}
+        </span>
+
+        {% if students.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ students.next_page_number }}">next</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ students.paginator.num_pages }}">last &raquo;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+    
+
+	{%endblock%}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+
+
+<div class="conatiner mt-5">
+    <h3 class="font-semibold mx-4 text-2xl">Rank: {{marks.first.student.result.first.rank}}</h3>
+  <h3  class="font-semibold mx-4 text-2xl">Total: {{total.total}}</h3>
+  <h3 class="font-semibold mx-4 text-2xl">Date: {{marks.first.student.result.first.Date_of_time}}</h3>
+  <table class=" table table-striped  mt-5 ">
+  
+    <tbody>
+
+  {% for mark in marks %}
+  <tr>
+  
+        <th scope="row">{{ forloop.counter }}</th>
+        <td class="capitalize font-semibold"><b>{{ mark.subject.subject}}</b></td>
+        <td>{{ mark.marks }}</td>
+        
+    </tr>
+{% endfor %}
+</div>
+
+
+  </table>
+
+
+  {%endblock%}

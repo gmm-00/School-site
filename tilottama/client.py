@@ -1,4 +1,4 @@
-
+from django.db.models import Sum
 
 import random
 from .models import *
@@ -51,3 +51,13 @@ def marks(n):
 					)
 	except Exception as e:
 		print(e)
+def report():
+    current_rank = 1
+    rank = Student.objects.annotate(marks=Sum('student_mark__marks')).order_by('-marks', '-student_age')
+    i = 1
+    for ranks in rank:
+        Result_student.objects.create(
+            student=ranks,
+            rank=i
+        )
+        i = i + 1

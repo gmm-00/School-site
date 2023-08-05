@@ -2,12 +2,12 @@
 
 {% block content %}
 
+<div class="student mt-2 flex justify-end mx-4">
+    <a href="/student/" class="btn btn-secondary">Students</a>
+</div>
 
- 
 
-
-
-<div class="container mt-5 ">
+<div class="container mt-5 items-end">
 <form method="post" class="col-6 mx-auto card px-3 shadow-lg" enctype="multipart/form-data">
 
 	{% csrf_token %}

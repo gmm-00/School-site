@@ -73,19 +73,45 @@ class Subject(models.Model):
     def __str__(self):
         return(self.subject)
 
-
-
 class StudentsMarks(models.Model):
-
-    student = models.ForeignKey(Student , related_name = "studentname" , on_delete=models.CASCADE)
-    subject= models.ForeignKey(Subject , on_delete = models.CASCADE)
+    student = models.ForeignKey(Student, related_name="student_mark", on_delete=models.CASCADE)
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
     marks = models.IntegerField()
 
-
     class Meta:
-        unique_together = ['student','subject']
-
+        unique_together = ['student', 'subject']
 
     def __str__(self):
         return f'{self.student} {self.subject} {self.marks}'
 
+
+
+
+
+
+class Result_student(models.Model):
+    student = models.ForeignKey(Student, related_name="result", on_delete=models.CASCADE)
+    rank=models.IntegerField()
+    Date_of_time = models.DateField(auto_now_add=True)
+
+
+    class Meta:
+        ordering = ['rank']
+
+
+    class Meta:
+        unique_together = ['rank', 'Date_of_time']
+
+
+
+
+class contact_details(models.Model):
+    name = models.CharField(max_length=30)
+    email = models.EmailField()
+    subject = models.CharField(max_length=200)
+    message = models.TextField()
+
+
+
+    def __str__(self):
+        return self.email
