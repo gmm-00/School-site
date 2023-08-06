@@ -13,7 +13,7 @@
 </div>
 
 <div id="content" class="content flex mt-12">
-  
+	
   <div class="flex">
     <div class="grid-rows-2 bg-gray-100 rounded-lg -my-18 mx-12 mb-20 shadow-lg">
       <div class="mx-10 mt-10 mb-14">
@@ -31,34 +31,35 @@
       <div class="mx-4 mt-3 text-gray-600">Email <br><div class="text-black">info@tilottama.edu.np</div></div></div></div></div></div></div></div></div>
 
    
-    <div class="txt mx-16 font-semibold text-blue-600 ">
-      <h4>#Contact</h4></div>
-      <div class="sp mx-16 mt-7 font-semibold text-4xl">
-      <h1> Get in <span> Touch </span> with Us  
-      </h1></div>
+   	<div class="txt mx-16 font-semibold text-blue-600 ">
+   		<h4>#Contact</h4></div>
+   		<div class="sp mx-16 mt-7 font-semibold text-4xl">
+   		<h1> Get in <span> Touch </span> with Us	
+   		</h1></div>
 
-    <div class="map -mt-10 ">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113076.5112008737!2d83.32614898681643!3d27.666577561944155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3996864275d9755f%3A0xa2f9cb36d45e590b!2sTilottama%20Campus!5e0!3m2!1sen!2snp!4v1690555447576!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      
-        
+   	<div class="map -mt-10 ">
+   		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113076.5112008737!2d83.32614898681643!3d27.666577561944155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3996864275d9755f%3A0xa2f9cb36d45e590b!2sTilottama%20Campus!5e0!3m2!1sen!2snp!4v1690555447576!5m2!1sen!2snp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+   		
+   	   	
    </div>
-  <form>
-    <div class="form flex">
+  <form method="post">
+    {% csrf_token %}
+  	<div class="form flex">
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label mx-14 text-black ">Name</label>
-      <input type="text" class="mx-14 form-control -mr-20 " id="exampleFormControlInput1" placeholder="Enter Your Name" style="width: 350px;"></div>
+      <input type="text" class="mx-14 form-control -mr-20 " name="name" id="exampleFormControlInput1" placeholder="Enter Your Name" style="width: 350px;"></div>
     
     <div class="mb-3 mx-10">
       <label for="exampleFormControlInput1" class="form-label mx-20 text-black">Email</label>
-      <input type="email" class="mx-20 form-control -mr-20" id="exampleFormControlInput1" placeholder="Enter Your Email" style="width: 350px;"></div>
+      <input type="email" class="mx-20 form-control -mr-20" name="email" id="exampleFormControlInput1" placeholder="Enter Your Email" style="width: 350px;"></div>
     <div class="mb-3 mx-10">
       <label for="exampleFormControlInput1" class="form-label mx-20 text-black">Subject</label>
-      <input type="text" class="mx-20 form-control -mr-20" id="exampleFormControlInput1" placeholder="Enter Your Subject" style="width: 350px;"></div></div>
+      <input type="text" class="mx-20 form-control -mr-20" name="subject" id="exampleFormControlInput1" placeholder="Enter Your Subject" style="width: 350px;"></div></div>
     
     <div class="mb-3 ">
-      <label for="exampleFormControlTextarea1" class="form-label mx-14 text-black">Message</label>
-      <textarea class="form-control mx-14 -mr-20" id="exampleFormControlTextarea1" rows="3" style="width:1000px; height:200px;"></textarea>
-  </div>
+    	<label for="exampleFormControlTextarea1" class="form-label mx-14 text-black">Message</label>
+  		<textarea class="form-control mx-14 -mr-20" name="message" id="exampleFormControlTextarea1" rows="3" style="width:1000px; height:200px;"></textarea>
+	</div>
   <button class="btn btn-outline-secondary mx-14" name="" >Submit</button>
     
     
@@ -86,3 +87,6 @@
 
 
 {% endblock %}
+
+
+        
