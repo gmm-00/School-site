@@ -122,9 +122,9 @@ def notice(request):
 
         return redirect('/notice')
 
-    notices = Notices.objects.all()  # Renamed the variable 'notice' to 'notices'
+    notices = Notices.objects.all()  
 
-    context = {'notices': notices}  # Renamed the context variable to 'notices'
+    context = {'notices': notices}
 
     return render(request, 'main.html', context)
 
