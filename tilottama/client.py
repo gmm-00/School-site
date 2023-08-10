@@ -19,7 +19,7 @@ def client(n=10) -> None:
 	        student_id = f'SM-0{random.randint(50, 250)}'
 	        student_name = fake.name()
 	        student_email = fake.email()
-	        sutdent_age = random.randint(18, 25)
+	        student_age = random.randint(18, 25)
 	        student_address = fake.address()
 
 	        studentid_obj = StudentID.objects.create(student_id=student_id)
@@ -29,7 +29,7 @@ def client(n=10) -> None:
 	            student_id=studentid_obj,
 	            student_name=student_name,
 	            student_email=student_email,
-	            sutdent_age=sutdent_age,
+	            student_age=student_age,
 	            student_address=student_address,
 	        )
 	except Exception as e:
