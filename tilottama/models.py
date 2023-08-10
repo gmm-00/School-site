@@ -10,7 +10,7 @@ class Notices(models.Model):
 
 
     def __str__(self):
-    	return self.notice_title
+        return self.notice_title
 
 
 

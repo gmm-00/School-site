@@ -64,7 +64,7 @@ def login_page(request):
                 messages.error(request, "Invalid username or password")
                 return redirect("/login/")
             else:
-                login(request, user)  # Assuming you want to log in the user here.
+                login(request, user)  
                 return redirect('/user-notice/')
     return render(request, 'login.html')
 

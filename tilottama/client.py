@@ -22,7 +22,7 @@ def client(n=10) -> None:
 	        student_age = random.randint(18, 25)
 	        student_address = fake.address()
 
-	        studentid_obj = StudentID.objects.create(student_id=student_id)
+	        studentid_obj = StudentID.objects.create(student_id = student_id)
 
 	        student_obj = Student.objects.create(
 	            department=department,
