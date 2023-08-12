@@ -11,10 +11,11 @@ html, body {
   height:575px;
 }
 .c-image{
-  height: 110%;
+  height: 100%;
   object-fit: cover;
   filter: brightness(4.0);
 }
+
 
 .carousel-wrapper {
   height: 100vh;
