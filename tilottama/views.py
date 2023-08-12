@@ -105,6 +105,12 @@ def footer(request):
 def gallery(request):
     return render(request, 'gallery.html')
 
+
+
+
+def Aboutus(request):
+    return render(request, 'about.html')
+
 def notice(request):
 
     if request.method == 'POST':

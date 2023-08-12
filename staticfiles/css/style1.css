@@ -137,7 +137,7 @@ html, body {
 
 
 
-#gallery {
+.gallery {
   position: relative;
   display: inline-block;
   }

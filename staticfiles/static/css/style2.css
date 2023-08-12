@@ -1,0 +1,46 @@
+         .contact {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .contact img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            filter: brightness(60%);
+        }
+
+        .contact h1 {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .contact p {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #f0f0f0;
+            font-size: 18px;
+            max-width: 70%;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo img {
+            position: absolute;
+
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            width: 5%;
+            cursor: pointer;
+        }

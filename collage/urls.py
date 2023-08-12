@@ -36,7 +36,7 @@ urlpatterns = [
     path('logout/' , views.logout_page , name='logout'),
     path('student/' , views.get_student , name='student'),
     path('see_marks/<student_id>' , views.see_marks , name='see_marks'),
-
+    path('about-us/' , views.Aboutus , name='aboutus'),
 ]
 
 
